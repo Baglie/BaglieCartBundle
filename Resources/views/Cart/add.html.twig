@@ -1,0 +1,19 @@
+<form method="post" action="" class="jcart">
+    <fieldset>
+        <input type="hidden" name="jcartToken" value="<?php echo $_SESSION['jcartToken'];?>" />
+        <input type="hidden" name="my-item-id" value="3" />
+        <input type="hidden" name="my-item-name" value="Hockey Stick" />
+        <input type="hidden" name="my-item-price" value="33.25" />
+        <input type="hidden" name="my-item-url" value="http://bing.com" />
+
+        <ul>
+            <li><strong>Hockey Stick</strong></li>
+            <li>Price: $33.25</li>
+            <li>
+                <label>Qty: <input type="text" name="my-item-qty" value="1" size="3" /></label>
+            </li>
+        </ul>
+
+        <input type="submit" name="my-add-button" value="add to cart" class="button tip" />
+    </fieldset>
+</form>
