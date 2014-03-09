@@ -1,0 +1,35 @@
+<div id="container_{{ name }}">
+
+    <a class="btn_upload dtn_fl btn_cv_width UploadButton" href="#" id="uploadFile_{{ name }}">
+        {{ 'brand.upload.logo'|trans({}, 'SiteBackendBundle') }}
+    </a>
+</div>
+<span class="legend_upload">
+    {% if value|length > 1 %}
+        {{ value }}
+    {% else %}
+        {{ 'brand.not.upload'|trans({}, 'SiteBackendBundle') }}
+    {% endif %}
+</span>
+
+<script type="text/javascript">
+    function startFunction{{ name }}()
+    {
+    }
+    function callbackFunction{{ name }}(response)
+    {
+        var container = '#container_{{ name }}',
+                res = $.parseJSON(response.response);
+        if (res.success)
+        {
+            $('img',container).remove();
+            $(container).prepend('<img style="max-height: 80px; max-width: 80px;" src="'+res.file+'" alt="">');
+            $('.file_upload_field').val(res.file);
+        }
+        else
+        {
+            alert(res.error);
+        }
+
+    }
+</script>

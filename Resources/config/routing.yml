@@ -1,0 +1,3 @@
+baglie_cart_add:
+    pattern:  /cart/add/
+    defaults: { _controller: BaglieCartBundle:Cart:add }
