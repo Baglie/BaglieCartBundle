@@ -24,6 +24,16 @@ class BaglieCartExtension extends Extension
 
         $container->setParameter('baglie_cart.jcartPath', $config['jcartPath']);
         $container->setParameter('baglie_cart.checkoutPath', $config['checkoutPath']);
+        $container->setParameter('baglie_cart.item', $config['item']);
+        $container->setParameter('baglie_cart.paypal', $config['paypal']);
+        $container->setParameter('baglie_cart.currencyCode', $config['currencyCode']);
+        $container->setParameter('baglie_cart.csrfToken', $config['csrfToken']);
+        $container->setParameter('baglie_cart.text', $config['text']);
+        $container->setParameter('baglie_cart.button', $config['button']);
+        $container->setParameter('baglie_cart.tooltip', $config['tooltip']);
+        $container->setParameter('baglie_cart.decimalQtys', $config['decimalQtys']);
+        $container->setParameter('baglie_cart.decimalPlaces', $config['decimalPlaces']);
+        $container->setParameter('baglie_cart.priceFormat', $config['priceFormat']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
