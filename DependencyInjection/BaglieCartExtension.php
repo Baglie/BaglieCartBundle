@@ -22,8 +22,8 @@ class BaglieCartExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('file_upload.types', $config['types']);
-        $container->setParameter('file_upload.web_dir', $config['web_dir']);
+        $container->setParameter('baglie_cart.jcartPath', $config['jcartPath']);
+        $container->setParameter('baglie_cart.checkoutPath', $config['checkoutPath']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
